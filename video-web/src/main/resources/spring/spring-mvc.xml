@@ -11,9 +11,23 @@
     <context:component-scan base-package="controller"/>
     <!--开启springmvc注解-->
     <mvc:annotation-driven/>
+    <!--设置允许访问静态资源配置,不配置springmvc默认拦截-->
+    <mvc:resources mapping="/static/imgs/**" location="static/imgs/" />
+    <mvc:resources mapping="/static/easyui/**" location="static/easyui/" />
+    <mvc:resources mapping="/static/js/**" location="static/js/" />
+    <mvc:resources mapping="/static/css/**" location="static/css/" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 上传文件 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"/>
+        <!-- 最大内存大小 -->
+        <property name="maxInMemorySize" value="10240"/>
+        <!-- 最大文件大小，-1为不限制大小 -->
+        <property name="maxUploadSize" value="-1"/>
     </bean>
 </beans>

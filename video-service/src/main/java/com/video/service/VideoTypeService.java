@@ -8,5 +8,6 @@ public interface VideoTypeService {
 
     VideoType selectByPrimaryKey(Integer id);
 
+    List<VideoType> getAllVideoType();
 
 }

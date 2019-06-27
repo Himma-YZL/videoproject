@@ -17,5 +17,5 @@ public interface VideoTypeMapper {
 
     int updateByPrimaryKey(VideoType record);
 
-
+    List<VideoType> getAllVideoType();
 }

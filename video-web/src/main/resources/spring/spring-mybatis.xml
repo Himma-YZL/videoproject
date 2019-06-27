@@ -8,8 +8,8 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
-    <!--加载jdbc和log4j配置文件-->
-    <context:property-placeholder location="classpath*:properties/*.properties"/>
+    <!--加载jdbc配置文件-->
+    <context:property-placeholder location="classpath*:properties/jdbc.properties"/>
 
     <!--扫描service-->
     <context:component-scan base-package="com.video.service"/>
@@ -45,6 +45,8 @@
         <property name="dataSource" ref="dataSource"/>
         <!--自动扫描mappers包下的xml文件-->
         <property name="mapperLocations" value="classpath*:mappers/*.xml"/>
+        <!--加载pageHelper分页插件配置文件-->
+        <property name="configLocation" value="classpath:config/pageHelper-config.xml"/>
     </bean>
 
     <!--dao层接口扫描-->
@@ -74,9 +76,9 @@
             <tx:method name="get*" propagation="SUPPORTS" read-only="true" />
         </tx:attributes>
     </tx:advice>
-    <!-- 切面 -->
-    <aop:config>
-        <aop:advisor advice-ref="txAdvice"
-                     pointcut="execution(* com.video.service.*.*(..))" />
-    </aop:config>
+    <!--&lt;!&ndash; 切面 &ndash;&gt;-->
+    <!--<aop:config>-->
+        <!--<aop:advisor advice-ref="txAdvice"-->
+                     <!--pointcut="execution(* com.video.service.*.*(..))" />-->
+    <!--</aop:config>-->
 </beans>

@@ -58,4 +58,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
+  <select id="getAllVideoType" resultType="com.video.entity.VideoType">
+    select a.id as id,a.type_name as typeName from video_type as a
+  </select>
 </mapper>

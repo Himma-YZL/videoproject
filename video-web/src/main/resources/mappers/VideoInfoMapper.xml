@@ -105,4 +105,9 @@
       video_del = #{videoDel,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getAllVideoInfo" resultType="com.video.entity.vo.VideoInfoVo">
+      SELECT a.id as id,a.video_name as videoName,a.video_url AS videoUrl,a.video_html AS videoHtml,b.type_name AS typeName,a.video_del AS videoDel FROM video_info AS a INNER JOIN video_type AS b WHERE a.video_type_id =b.id AND a.video_del='0'
+  </select>
+
 </mapper>

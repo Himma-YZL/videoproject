@@ -16,5 +16,9 @@ public class VideoTypeServiceImpl implements VideoTypeService {
         return videoTypeMapper.selectByPrimaryKey(id);
     }
 
+    public List<VideoType> getAllVideoType() {
+        return videoTypeMapper.getAllVideoType();
+    }
+
 
 }
