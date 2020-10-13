@@ -25,7 +25,7 @@
         <video-service.version>1.0-SNAPSHOT</video-service.version>
 
         <!--通用部分-->
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <!--spring-->
         <spring.version>4.1.3.RELEASE</spring.version>
