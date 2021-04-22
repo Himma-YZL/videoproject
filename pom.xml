@@ -33,7 +33,7 @@
         <cglib.version>3.2.4</cglib.version>
 
         <!--mybatis-->
-        <mybatis.version>3.2.8</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
         <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
         <!--mysql-->
